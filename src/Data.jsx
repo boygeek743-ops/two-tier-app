@@ -4,7 +4,7 @@ function Data() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("/api/data")  // <- use this, not the full IP
+    fetch("/3.249.94.36:5000/data")  // <- use this, not the full IP
       .then((res) => res.json())
       .then((json) => setData(json))
       .catch((err) => console.error("API call error:", err));
