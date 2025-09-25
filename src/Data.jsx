@@ -6,7 +6,7 @@ function Data() {
   const [error, setError] = useState(null);      // Track errors
 
   useEffect(() => {
-    fetch("http://3.249.94.36:5000/data")
+    fetch("http://api/data")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
