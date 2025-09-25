@@ -4,7 +4,7 @@ function Data() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("/3.249.94.36:5000/data")  // <- use this, not the full IP
+    fetch("/api/data")  // <- use this, not the full IP
       .then((res) => res.json())
       .then((json) => setData(json))
       .catch((err) => console.error("API call error:", err));
@@ -16,7 +16,7 @@ function Data() {
         Hi there I am here to test my two tier application. Hope this works
         lol😂
       </h1>
-      {data ? <div>{data.message}</div> : "Loading..."}
+      {data ? <div>{data.message}</div> : "yo this is tesa"}
     </div>
   );
 }
