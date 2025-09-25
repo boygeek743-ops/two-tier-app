@@ -4,7 +4,7 @@ function Data() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("/api/data") // Use the Nginx proxy
+    fetch("/api/data")  // <- use this, not the full IP
       .then((res) => res.json())
       .then((json) => setData(json))
       .catch((err) => console.error("API call error:", err));
@@ -13,9 +13,10 @@ function Data() {
   return (
     <div>
       <h1>
-        Hi there I am here to test my two tier application. Hope this works lol😂
+        Hi there I am here to test my two tier application. Hope this works
+        lol😂
       </h1>
-      {data && <p>{data.message}</p>}
+      {data ? <div>{data.message}</div> : "Loading..."}
     </div>
   );
 }
